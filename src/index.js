@@ -8,11 +8,11 @@ angular.module('app', ['angular.filter'])
         }
     })
 
-    .run(function (listCallHistory) {
+    /*.run(function (listCallHistory) {
         listCallHistory().then(function (list) {
             console.log('callHistoryList:', list);
         });
-    })
+    })*/
 
     .controller('index',function($scope,listCallHistory) {
 
@@ -27,9 +27,14 @@ angular.module('app', ['angular.filter'])
             return minutes+':'+seconds;
         };
 
-        $scope.getDayByDate = function(DateStamp) {
-            //e.date = e.date.toLocaleDateString();
-            return "qwd";
+        $scope.getDayByDate = function(Call) {
+
+            var date = new Date(Call.connected.substr(0,Call.connected.length-7));
+
+            var r = date.toLocaleDateString();
+            console.log('date:', r);
+
+            return r;
         };
 
     })

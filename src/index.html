@@ -16,19 +16,20 @@
 <body ng-app="app">
 
 
-    <div class="col" style="width: 400px">
+    <div class="col" style="width: 450px">
 
         <!--Searchline-->
-        <div class="col-lg-6">
-            <div class="input-group">
+        <div style="padding: 20px; background-color: #EEEEEE" >
+
+            <div class="input-group" >
 
                 <input type="text" class="form-control" placeholder="Search for...">
 
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                </span>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span>
 
             </div>
         </div>
@@ -41,47 +42,46 @@
             }
         </style>
 
-        <div ng-controller="index">
-            <!--<ul ng-repeat="call in callList">
+        <!--style=" height: 400px; overflow-x:hidden "-->
 
-                <div class="row" style="background-color: #65ACF5">
+        <div ng-controller="index" >
 
-                    <div class="col-sm-2"
-                         style="background-color: #5AF6C5"
-                         style="height:100%; vertical-align: middle;">
+            <div ng-repeat="call in callList">
 
+                <div class="row-fluid" style="display: flex; align-items: center;
+                                              vertical-align: bottom">
 
-                        <div ng-if="call.duration > 0" ng-switch on="call.direction">
+                    <div class="col-sm-1">
+
+                        <div ng-if="call.duration > 0"
+                             ng-switch on="call.direction"
+                             style="height: 100%; min-height: 100%;">
 
                             <div ng-switch-when="0">
                                 <img src="./img/diagonal-arrow_up.svg"
                                      class="img-responsive"
-                                     style="width: 15px; height: auto;" />
+                                     />
                             </div>
 
                             <div ng-switch-when="1">
                                 <img src="./img/diagonal-arrow_down.svg"
                                      class="img-responsive"
-                                     style="width: 15px; height: auto;" />
+                                     />
                             </div>
 
                         </div>
 
-
                     </div>
 
-                    <div class="col-sm-8"
-                         style="background-color: #5F6CA5"
+                    <div class="col-sm-8">
+                        <div >
 
-                            >
-                        <div ng-class="{test: call.duration == 0}">
-
-                            <div ng-switch on="call.name">
+                            <div ng-switch on="call.name" ng-class="{test: call.duration == 0}">
                                 <div ng-switch-when="">
-                                    <h5>Unknown caller</h5>
+                                    <h5 style="font-weight: bold">Unknown caller</h5>
                                 </div>
                                 <div ng-switch-default>
-                                    <h5>{{ call.name }}</h5>
+                                    <h5 style="font-weight: bold">{{ call.name }}</h5>
                                 </div>
                             </div>
 
@@ -90,25 +90,22 @@
                     </div>
 
 
-                    <div class="col-sm-2"
-                         style="background-color: #FF5F65"
+                    <div class="col-sm-3 text-right">
 
-                            >
-
-                        <div >
+                        <div style="padding-right: 10px">
 
                             <div ng-switch on="call.duration">
                                 <div ng-switch-when="0">
-                                    <h5>missed</h5>
+                                    <h5 style="color: #999999">missed</h5>
                                 </div>
 
                                 <div ng-switch-default>
-                                    <h5>{{ getCallTime(call.duration) }}</h5>
+                                    <h5 style="color: #999999">{{ getCallTime(call.duration) }}</h5>
                                 </div>
-                        </div>
+                            </div>
 
-                        <img src="./img/call_back.svg"
-                             class="img-responsive" />
+                            <img src="./img/call_back.svg"
+                                 class="img-responsive pull-right " />
 
                         </div>
 
@@ -117,28 +114,24 @@
 
                 </div>
 
-            </ul>-->
+                <hr style="border-top: 1px solid #EEEEEE !important; margin-top: 10px; margin-bottom: 1px" />
+
+            </div>
 
 
-            <ul ng-repeat="(key, value) in callList | map: getDayByDate() | groupBy : 'direction'">
+
+
+
+            <!--<ul ng-repeat="(key, value) in callList | map: getDayByDate track by getDayByDate | groupBy : 'connected' ">
+
                 Group name: {{ key }}
                 <li ng-repeat="player in value">
                     Hello, {{player.connected | date:'MM/dd/yyyy'}}!
                 </li>
-            </ul>
-
-           <!-- <li ng-repeat="(key, value) in players | countBy: 'team'" >
-                Group name: {{ key }}, length: {{ value }}
-            </li>-->
+            </ul>-->
+            <!--| toArray:true | orderBy:min-->
 
         </div>
-
-        <!--<ul ng-repeat="(key, value) in callList | groupBy: 'team'">
-            Group name: {{ key }}
-            <li ng-repeat="player in value">
-                player: {{ player.name }}
-            </li>
-        </ul>-->
 
         <span class="label label-success">Success</span>
 
