@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical task</title>
+    <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-filter-master/dist/angular-filter.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="./index.js"></script>
+
+
+
+</head>
+
+<body ng-app="app">
+
+
+    <div class="col" style="width: 400px">
+
+        <!--Searchline-->
+        <div class="col-lg-6">
+            <div class="input-group">
+
+                <input type="text" class="form-control" placeholder="Search for...">
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+
+        <!--Items-->
+
+        <style>
+            .test {
+                color: red;
+            }
+        </style>
+
+        <div ng-controller="index">
+            <!--<ul ng-repeat="call in callList">
+
+                <div class="row" style="background-color: #65ACF5">
+
+                    <div class="col-sm-2"
+                         style="background-color: #5AF6C5"
+                         style="height:100%; vertical-align: middle;">
+
+
+                        <div ng-if="call.duration > 0" ng-switch on="call.direction">
+
+                            <div ng-switch-when="0">
+                                <img src="./img/diagonal-arrow_up.svg"
+                                     class="img-responsive"
+                                     style="width: 15px; height: auto;" />
+                            </div>
+
+                            <div ng-switch-when="1">
+                                <img src="./img/diagonal-arrow_down.svg"
+                                     class="img-responsive"
+                                     style="width: 15px; height: auto;" />
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-sm-8"
+                         style="background-color: #5F6CA5"
+
+                            >
+                        <div ng-class="{test: call.duration == 0}">
+
+                            <div ng-switch on="call.name">
+                                <div ng-switch-when="">
+                                    <h5>Unknown caller</h5>
+                                </div>
+                                <div ng-switch-default>
+                                    <h5>{{ call.name }}</h5>
+                                </div>
+                            </div>
+
+                            <h6>Phone: {{ call.number }}</h6>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-2"
+                         style="background-color: #FF5F65"
+
+                            >
+
+                        <div >
+
+                            <div ng-switch on="call.duration">
+                                <div ng-switch-when="0">
+                                    <h5>missed</h5>
+                                </div>
+
+                                <div ng-switch-default>
+                                    <h5>{{ getCallTime(call.duration) }}</h5>
+                                </div>
+                        </div>
+
+                        <img src="./img/call_back.svg"
+                             class="img-responsive" />
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </ul>-->
+
+
+            <ul ng-repeat="(key, value) in callList | map: getDayByDate() | groupBy : 'direction'">
+                Group name: {{ key }}
+                <li ng-repeat="player in value">
+                    Hello, {{player.connected | date:'MM/dd/yyyy'}}!
+                </li>
+            </ul>
+
+           <!-- <li ng-repeat="(key, value) in players | countBy: 'team'" >
+                Group name: {{ key }}, length: {{ value }}
+            </li>-->
+
+        </div>
+
+        <!--<ul ng-repeat="(key, value) in callList | groupBy: 'team'">
+            Group name: {{ key }}
+            <li ng-repeat="player in value">
+                player: {{ player.name }}
+            </li>
+        </ul>-->
+
+        <span class="label label-success">Success</span>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
