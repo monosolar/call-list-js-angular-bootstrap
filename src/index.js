@@ -9,9 +9,7 @@ angular.module('app', ['angular.filter'])
     })
 
     /*.run(function (listCallHistory) {
-        listCallHistory().then(function (list) {
-            console.log('callHistoryList:', list);
-        });
+
     })*/
 
     .controller('index',function($scope,listCallHistory) {
@@ -19,6 +17,7 @@ angular.module('app', ['angular.filter'])
         listCallHistory().then(function (list) {
             $scope.callList =  list;
         });
+
 
         $scope.getCallTime = function(Seconds){
             var minutes = parseInt(Seconds / 60);
@@ -42,6 +41,6 @@ angular.module('app', ['angular.filter'])
 
 
 
-;
+
 
 
