@@ -4,7 +4,7 @@
     "duration": 255,
     "name": "Osborn Wiley",
     "number": "(917) 515-3354",
-    "connected": "2016-11-22T06:13:07 -03:00",
+    "connected": "2016-11-22T06:13:07-03:00",
     "direction": 1
   },
   {
@@ -12,7 +12,7 @@
     "duration": 52,
     "name": "Bessie Chambers",
     "number": "(863) 432-2831",
-    "connected": "2016-11-23T07:01:25 -03:00",
+    "connected": "2016-11-23T07:01:25-03:00",
     "direction": 1
   },
   {
@@ -20,7 +20,7 @@
     "duration": 29,
     "name": "Morgan Olson",
     "number": "(970) 540-3966",
-    "connected": "2016-11-23T06:57:10 -03:00",
+    "connected": "2016-11-23T06:57:10-03:00",
     "direction": 0
   },
   {
@@ -28,7 +28,7 @@
     "duration": 48,
     "name": "Sargent Juarez",
     "number": "(978) 486-2597",
-    "connected": "2016-11-22T12:02:05 -03:00",
+    "connected": "2016-11-22T12:02:05-03:00",
     "direction": 1
   },
   {
@@ -36,7 +36,7 @@
     "duration": 33,
     "name": "Patton Gillespie",
     "number": "(998) 464-3977",
-    "connected": "2016-11-22T06:59:31 -03:00",
+    "connected": "2016-11-22T06:59:31-03:00",
     "direction": 0
   },
   {
@@ -44,7 +44,7 @@
     "duration": 0,
     "name": "",
     "number": "(991) 474-9325",
-    "connected": "2016-11-22T12:18:05 -03:00",
+    "connected": "2016-11-22T12:18:05-03:00",
     "direction": 0
   },
   {
@@ -52,7 +52,7 @@
     "duration": 16,
     "name": "Gomez Huff",
     "number": "(944) 527-2805",
-    "connected": "2016-11-22T10:47:05 -03:00",
+    "connected": "2016-11-22T10:47:05-03:00",
     "direction": 0
   },
   {
@@ -60,7 +60,7 @@
     "duration": 194,
     "name": "Krystal Guzman",
     "number": "(976) 467-2303",
-    "connected": "2016-11-23T01:12:17 -03:00",
+    "connected": "2016-11-23T01:12:17-03:00",
     "direction": 0
   },
   {
@@ -68,7 +68,7 @@
     "duration": 0,
     "name": "Nina Karson",
     "number": "(997) 789-3609",
-    "connected": "2016-11-23T11:45:17 -03:00",
+    "connected": "2016-11-23T11:45:17-03:00",
     "direction": 0
   },
   {
@@ -76,7 +76,7 @@
     "duration": 85,
     "name": "Katharine Petersen",
     "number": "(882) 585-3881",
-    "connected": "2016-11-23T01:44:18 -03:00",
+    "connected": "2016-11-23T01:44:18-03:00",
     "direction": 1
   }
 ]

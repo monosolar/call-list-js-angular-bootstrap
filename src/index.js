@@ -27,16 +27,17 @@ angular.module('app', ['angular.filter'])
         };
 
         $scope.getDayByDate = function(Call) {
-
-            var date = new Date(Call.connected.substr(0,Call.connected.length-7));
-
-            var r = date.toLocaleDateString();
-            console.log('date:', r);
-
-            return r;
+            if (! /^(\d{1,2})[.\/](\d{1,2})[.\/](\d{4})$/.test(Call.connected) )
+            {
+                var date = new Date(Call.connected);
+                Call.connected = date.toLocaleDateString();
+            }
+            return Call;
         };
 
     })
+
+
 
 
 
