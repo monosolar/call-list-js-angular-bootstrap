@@ -35,6 +35,18 @@ angular.module('app', ['angular.filter'])
             return Call;
         };
 
+        $scope.dateGroupToggleActive = function($event) {
+            var callListDiv = angular.element($event.currentTarget).next();
+
+            if (callListDiv.hasClass('ng-hide'))
+            {
+                callListDiv.removeClass('ng-hide')
+            } else {
+                callListDiv.addClass('ng-hide')
+            }
+
+        };
+
     })
 
 
