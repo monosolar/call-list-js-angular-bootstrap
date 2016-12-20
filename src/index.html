@@ -19,7 +19,7 @@
     <div class="row-fluid" style="width: 450px">
 
         <!--Searchline-->
-        <div style="padding: 20px; background-color: #EEEEEE" >
+        <div class="greyBG" style="padding: 20px;" >
 
             <div class="input-group changethisone" >
 
@@ -36,25 +36,16 @@
 
         <hr style="border-top: 1px solid #BBBBBB !important; margin-top: 0px; margin-bottom: 0px" />
 
-        <!--Items-->
-
-        <style>
-            .test {
-                color: red;
-            }
-        </style>
-
-
         <div class="row-fluid pre-scrollable" ng-controller="index" style=" overflow-x:hidden ">
 
             <div class="row-fluid" ng-repeat="(key, value) in callList
                                                            | map : getDayByDate
                                                            | groupBy : 'connected' "  >
 
-                <div class="row" style="background-color: #EEEEEE"
-                     ng-click="dateGroupToggleActive($event)"
-                     class="trigger">
-                    <div class="col-md-11 col-md-offset-1" style="background-color: #EEEEEE">
+                <div class="row greyBG"
+                     ng-click="dateGroupToggleActive($event)">
+
+                    <div class="col-md-11 col-md-offset-1 greyBG" >
                         <font style="font-weight: bold">Today: {{ key }}</font>
                     </div>
                 </div>
@@ -70,15 +61,11 @@
                                  style="height: 100%; min-height: 100%;">
 
                                 <div ng-switch-when="0" class="media-middle">
-                                    <img src="./img/diagonal-arrow_up.svg"
-                                         class="img-responsive media-object" width="12"
-                                            />
+                                    <img src="./img/diagonal-arrow_up.svg" width="10" />
                                 </div>
 
                                 <div ng-switch-when="1">
-                                    <img src="./img/diagonal-arrow_down.svg"
-                                         class="img-responsive" width="12"
-                                            />
+                                    <img src="./img/diagonal-arrow_down.svg" width="10" />
                                 </div>
 
                             </div>
@@ -88,7 +75,7 @@
                         <div class="col-md-8">
                             <div >
 
-                                <div ng-switch on="call.name" ng-class="{test: call.duration == 0}">
+                                <div ng-switch on="call.name" ng-class="{missedCall: call.duration == 0}">
                                     <div ng-switch-when="">
                                         <h5 style="font-weight: bold">Unknown caller</h5>
                                     </div>
