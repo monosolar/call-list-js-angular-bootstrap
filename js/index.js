@@ -9,34 +9,32 @@ angular.module('app', ['angular.filter'])
     })
 
 
-    .controller('index',function($scope,listCallHistory) {
+    .controller('index', function ($scope, listCallHistory) {
 
         listCallHistory().then(function (list) {
-            $scope.callList =  list;
+            $scope.callList = list;
         });
 
 
-        $scope.getCallTime = function(Seconds){
-            var minutes = parseInt(Seconds / 60);
-            var seconds = Seconds % 60;
+        $scope.getCallTime = function (secondsAmount) {
+            var minutes = parseInt(secondsAmount / 60);
+            var seconds = secondsAmount % 60;
 
-            return minutes+':'+seconds;
+            return minutes + ':' + seconds;
         };
 
-        $scope.getDayByDate = function(Call) {
-            if (! /^(\d{1,2})[.\/](\d{1,2})[.\/](\d{4})$/.test(Call.connected) )
-            {
-                var date = new Date(Call.connected);
-                Call.connected = date.toLocaleDateString();
+        $scope.getDayByDate = function (call) {
+            if (!/^(\d{1,2})[.\/](\d{1,2})[.\/](\d{4})$/.test(call.connected)) {
+                var date = new Date(call.connected);
+                call.connected = date.toLocaleDateString();
             }
-            return Call;
+            return call;
         };
 
-        $scope.dateGroupToggleActive = function($event) {
+        $scope.dateGroupToggleActive = function ($event) {
             var callListDiv = angular.element($event.currentTarget).next();
 
-            if (callListDiv.hasClass('ng-hide'))
-            {
+            if (callListDiv.hasClass('ng-hide')) {
                 callListDiv.removeClass('ng-hide')
             } else {
                 callListDiv.addClass('ng-hide')
