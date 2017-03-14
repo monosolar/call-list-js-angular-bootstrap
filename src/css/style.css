@@ -1,0 +1,42 @@
+.greyBG {
+    background-color: #EEEEEE
+}
+
+.missedCall {
+    color: red;
+}
+
+.content-width {
+    max-width: 450px;
+}
+
+.bold-style {
+    font-weight: bold;
+}
+
+.missed-call-style {
+    color: #999999;
+}
+
+.searchline-padding {
+    padding: 20px;
+}
+
+.searchline-hr {
+    border-top: 1px solid #BBBBBB !important; margin-top: 0; margin-bottom: 0;
+}
+
+.item-row {
+    display: flex; align-items: center;
+}
+
+.item-call-section {
+    height: 100%; min-height: 100%;
+}
+
+.item-duration-section {
+    padding-right: 10px;
+}
+
+
+

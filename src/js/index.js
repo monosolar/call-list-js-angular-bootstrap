@@ -2,15 +2,12 @@ angular.module('app', ['angular.filter'])
 
     .service('listCallHistory', function ($http) {
         return function () {
-            return $http.get('./resources/mock.json').then(function (res) {
+            return $http.get('./mocks/mock.json').then(function (res) {
                 return res.data;
             });
         }
     })
 
-    /*.run(function (listCallHistory) {
-
-    })*/
 
     .controller('index',function($scope,listCallHistory) {
 
