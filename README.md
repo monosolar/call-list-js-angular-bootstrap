@@ -1,7 +1,3 @@
-# call-list-js-angular-bootstrap
-
-# angular, bootstrap, svg, 
-
 # Technical task
 ## Description
 When user opens `index.html` he should see call history grouped by day.
@@ -23,3 +19,11 @@ Call history should be a scrollable list with breakdown by day.
  + When call was missed (duration = 0) *__'missed'__* should be displayed.
  + User should have indication on weather it was Inbound call or Outbound based on direction: outbound - 0; inbound - 1.  
  + Missed call should be indicated with red text color.
+
+# Realization
+
+HTML5, CSS3, angular, bootstrap 
+
+## Notice
+
+Please launch index.html through some server to grabbing mock.json
