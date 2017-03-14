@@ -8,6 +8,21 @@ angular.module('app', ['angular.filter'])
         }
     })
 
+    .directive('hideOnDate', function () {
+        return function (scope, element, attrs) {
+
+            scope.$watch('disabledDatesArray', function (value, oldValue) {
+
+                const keyID = scope.disabledDatesArray.indexOf(attrs.hideOnDate);
+                if (keyID < 0) {
+                    element.removeClass("ng-hide");
+                } else {
+                    element.addClass("ng-hide");
+                }
+
+            }, true);
+        }
+    })
 
     .controller('index', function ($scope, listCallHistory) {
 
@@ -15,6 +30,7 @@ angular.module('app', ['angular.filter'])
             $scope.callList = list;
         });
 
+        $scope.disabledDatesArray = [];
 
         $scope.getCallTime = function (secondsAmount) {
             var minutes = parseInt(secondsAmount / 60);
@@ -38,6 +54,18 @@ angular.module('app', ['angular.filter'])
                 callListDiv.removeClass('ng-hide')
             } else {
                 callListDiv.addClass('ng-hide')
+            }
+
+        };
+
+        $scope.onDateRowClicked = function (dateObject) {
+
+            const keyID = $scope.disabledDatesArray.indexOf(dateObject.key);
+
+            if (keyID < 0) {
+                $scope.disabledDatesArray.push(dateObject.key);
+            } else {
+                $scope.disabledDatesArray.splice(keyID, 1);
             }
 
         };

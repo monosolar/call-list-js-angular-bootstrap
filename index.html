@@ -16,9 +16,8 @@
 
     <body ng-app="app">
 
-        <div class="row-fluid content-width">
+        <div class="row-fluid content-width" >
 
-            <!--Searchline-->
             <div class="greyBG searchline-padding">
 
                 <div class="input-group changethisone">
@@ -35,69 +34,24 @@
 
             <hr class="searchline-hr"/>
 
-            <div class="row-fluid pre-scrollable" ng-controller="index" style=" overflow-x:hidden ">
+            <div class="row-fluid pre-scrollable data-div " ng-controller="index">
                 <div class="row-fluid" ng-repeat="(key, value) in callList
                                                                    | map : getDayByDate
                                                                    | groupBy : 'connected' ">
-                    <div class="row greyBG" ng-click="dateGroupToggleActive($event)">
-                        <div class="col-md-9 col-md-offset-1 greyBG bold-style">
+
+                    <div class="row greyBG" ng-click="onDateRowClicked({key})">
+                        <div class="col-md-9 col-md-offset-1 greyBG bold-style date-div">
                             {{ key }}
                         </div>
-                    </div>
-
-                    <div class="row-fluid item-row" ng-repeat="call in value | filter: searchText">
-
-                        <div class="col-md-1 media">
-
-                            <div ng-if="call.duration > 0" class="media-middle item-call-section"
-                                 ng-switch on="call.direction">
-                                <div ng-switch-when="0" class="media-middle">
-                                    <img src="./img/diagonal-arrow_up.svg" width="10"/>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <img src="./img/diagonal-arrow_down.svg" width="10"/>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-8">
-
-                            <div>
-                                <div ng-switch on="call.name" ng-class="{missedCall: call.duration == 0}">
-                                    <div ng-switch-when="">
-                                        <h5 class="bold-style">Unknown caller</h5>
-                                    </div>
-                                    <div ng-switch-default>
-                                        <h5 class="bold-style">{{ call.name }}</h5>
-                                    </div>
-                                </div>
-
-                                <h6>Phone: {{ call.number }}</h6>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-3 text-right">
-
-                            <div class="item-duration-section">
-                                <div ng-switch on="call.duration">
-                                    <div ng-switch-when="0">
-                                        <h5 class="missed-call-style">missed</h5>
-                                    </div>
-                                    <div ng-switch-default>
-                                        <h5 class="missed-call-style">{{ getCallTime(call.duration) }}</h5>
-                                    </div>
-                                </div>
-                                <img src="./img/call_back.svg"
-                                     class="img-responsive pull-right "/>
-                            </div>
-
-                        </div>
-
-                        <hr class="searchline-hr"/>
 
                     </div>
+
+                    <div hide-on-date="{{key}}">
+                        <div class="row-fluid item-row" ng-repeat="call in value | filter: searchText"
+                             ng-include="'html-templates/callrow.html'"></div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

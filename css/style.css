@@ -14,6 +14,10 @@
     font-weight: bold;
 }
 
+.date-div {
+    cursor: pointer;
+}
+
 .missed-call-style {
     color: #999999;
 }
@@ -37,6 +41,12 @@
 .item-duration-section {
     padding-right: 10px;
 }
+
+.data-div {
+    overflow-x:hidden;
+}
+
+
 
 
 

@@ -1,0 +1,49 @@
+<div class="col-md-1 media">
+
+    <div ng-if="call.duration > 0" class="media-middle item-call-section"
+         ng-switch on="call.direction">
+        <div ng-switch-when="0" class="media-middle">
+            <img src="./img/diagonal-arrow_up.svg" width="10"/>
+        </div>
+        <div ng-switch-when="1">
+            <img src="./img/diagonal-arrow_down.svg" width="10"/>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-8">
+
+    <div>
+        <div ng-switch on="call.name" ng-class="{missedCall: call.duration == 0}">
+            <div ng-switch-when="">
+                <h5 class="bold-style">Unknown caller</h5>
+            </div>
+            <div ng-switch-default>
+                <h5 class="bold-style">{{ call.name }}</h5>
+            </div>
+        </div>
+
+        <h6>Phone: {{ call.number }}</h6>
+    </div>
+
+</div>
+
+<div class="col-md-3 text-right">
+
+    <div class="item-duration-section">
+        <div ng-switch on="call.duration">
+            <div ng-switch-when="0">
+                <h5 class="missed-call-style">missed</h5>
+            </div>
+            <div ng-switch-default>
+                <h5 class="missed-call-style">{{ getCallTime(call.duration) }}</h5>
+            </div>
+        </div>
+        <img src="./img/call_back.svg"
+             class="img-responsive pull-right "/>
+    </div>
+
+</div>
+
+<hr class="searchline-hr"/>
